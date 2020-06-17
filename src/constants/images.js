@@ -1,4 +1,6 @@
-const Images = {};
+const Images = {
+  logo: require("../assets/images/logo.png"),
+};
 
 const toArray = () => {
   let keys = Object.keys(images);
