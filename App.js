@@ -6,23 +6,30 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import useCachedResources from "./src/hooks/useCachedResources";
 import BottomTabNavigator from "./src/navigation/BottomTabNavigator";
 import LinkingConfiguration from "./src/navigation/LinkingConfiguration";
-
-const Stack = createStackNavigator();
+import OnBoarding from "./src/screens/OnBoarding";
+import {
+  OnBoardProvider,
+  useOnBoardState,
+  useOnBoardDispatch,
+} from "./src/contexts/onboard";
+import { Nav } from "./src/navigation";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
-
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
       <View style={styles.container}>
-        {Platform.OS === "ios" && <StatusBar barStyle="dark-content" />}
-        <NavigationContainer linking={LinkingConfiguration}>
-          <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <SafeAreaProvider>
+          {Platform.OS === "ios" && <StatusBar barStyle="dark-content" />}
+          <NavigationContainer linking={LinkingConfiguration}>
+            <OnBoardProvider>
+              <Nav />
+            </OnBoardProvider>
+          </NavigationContainer>
+        </SafeAreaProvider>
       </View>
     );
   }
