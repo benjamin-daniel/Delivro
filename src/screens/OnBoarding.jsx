@@ -4,13 +4,12 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useOnBoardDispatch } from "contexts";
+import Colors from "constants/Colors";
 
 const OnBoarding = ({ navigation }) => {
   const dispatch = useOnBoardDispatch();
   return (
-    <SafeAreaView
-      style={{ flex: 1, justifyContent: "space-between", alignItems: "center" }}
-    >
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.tintColor }}>
       <View>
         <Text>Hey</Text>
         <TouchableOpacity onPress={() => dispatch({ type: "board" })}>
