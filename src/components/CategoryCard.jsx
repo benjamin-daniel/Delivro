@@ -4,13 +4,16 @@ import { View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import Colors from "constants/Colors";
 import Text from "./Text";
 import Layout from "constants/Layout";
+import Images from "constants/Images";
 
-const VeggieImage = require("../assets/images/Media-2.jpg");
-const FruitImage = require("../assets/images/Media-4.jpg");
-const BreadImage = require("../assets/images/Media-3.jpg");
-const CoffeeImage = require("../assets/images/Media-1.jpg");
-const SweetsImage = require("../assets/images/Media-5.jpg");
-const RopeImage = require("../assets/images/Media.jpg");
+const {
+  VeggieImage,
+  FruitImage,
+  BreadImage,
+  CoffeeImage,
+  SweetsImage,
+  RopeImage,
+} = Images;
 
 const CategoryImages = {
   0: VeggieImage,
@@ -25,7 +28,7 @@ const CategoryCard = ({ name, count, id, index }) => {
   // determine if the card is on the right or left
   const left = index % 2 == 0;
   const addonStyle = left ? { marginRight: 10 } : { marginLeft: 10 };
-  
+
   // hack to get real height as cover mode is buggy
   const width = (Layout.window.width - 40) / 2;
   return (
