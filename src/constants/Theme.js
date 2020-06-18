@@ -9,6 +9,9 @@ export default {
     button: {
       color: Colors.errorText,
     },
+    header: {
+      fontSize: 30,
+    },
   },
   buttonVariants: {
     primary: {

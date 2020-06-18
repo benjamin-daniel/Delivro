@@ -14,7 +14,10 @@ import Button from "components/Button";
 
 const LOGO_SIZE = 80;
 
-const SheetContent = () => {
+const InnerContent = ({ navigation }) => {
+  const enterApp = () => {
+    navigation.navigate("Root");
+  };
   return (
     <View style={styles.sheetContainer}>
       <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
@@ -37,6 +40,7 @@ const SheetContent = () => {
         text="ORDER NOW"
         variant="primary"
         containerStyle={styles.button}
+        onPress={() => enterApp()}
       />
       <Button
         text="DISMISS"
@@ -50,6 +54,10 @@ const SheetContent = () => {
 
 const OnBoarding = ({ navigation }) => {
   const dispatch = useOnBoardDispatch();
+  const SheetContent = () => <InnerContent {...{ navigation }} />;
+  // TODO: remove
+  navigation.navigate("Root");
+
   return (
     <View style={{ flex: 1, backgroundColor: Colors.tintColor }}>
       <View style={{ height: 300 }}>
