@@ -41,7 +41,16 @@ const Button = ({
     ? [styles.button, buttonStyle]
     : [styles.button, themedStyles, buttonStyle];
   const content = secondary ? (
-    <View style={allStyles}>{icon}</View>
+    <View style={allStyles}>
+      <View style={{ flexDirection: "row" }}>
+        {icon}
+        {!!text && (
+          <Text style={{ color: textColor }} variant={textVariant}>
+            {text}
+          </Text>
+        )}
+      </View>
+    </View>
   ) : (
     <View style={allStyles}>
       {loading ? (

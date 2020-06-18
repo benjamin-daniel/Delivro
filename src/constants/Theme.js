@@ -26,10 +26,37 @@ export default {
     secondary: {
       color: Colors.bgViolet,
     },
-    itemHeader: {
+    itemTabHeader: {
       fontSize: 18,
       color: Colors.primary,
       fontWeight: "bold",
+    },
+    itemHeader: {
+      fontSize: 30,
+      fontWeight: "bold",
+    },
+    mainInfo: {
+      color: Colors.primary,
+      fontSize: 30,
+      fontWeight: "bold",
+      lineHeight: 42
+    },
+    secondaryInfo: {
+      fontSize: 24,
+      color: Colors.primary50,
+      fontWeight: 'normal',
+      lineHeight: 42
+
+    },
+    itemInfo: {
+      marginVertical: 10,
+      fontSize: 16,
+      color: Colors.sGreen
+      // fontWeight: 'bold'
+    },
+    secondaryButton: {
+      color: Colors.white,
+      marginLeft: 15,
     },
   },
   buttonVariants: {
@@ -46,13 +73,14 @@ export default {
       paddingHorizontal: 0,
       backgroundColor: Colors.white,
       // height: 50,
-      width: 70,
+      minWidth: 70,
       // height: 40,
       justifyContent: "center",
       alignItems: "center",
       borderRadius: 8,
       borderWidth: 1,
-      borderColor: Colors.faintGrey
+      borderColor: Colors.faintGrey,
+      textColor: Colors.white,
     },
   },
 };

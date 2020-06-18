@@ -40,7 +40,6 @@ const SubCategory = ({ route, navigation }) => {
   const focus = (chip) => setSelected(chip);
   const goBack = () => navigation.goBack();
   // const tabPress = () => console.log("Yeah");
-  const tabPress = () => navigation.navigate("Item");
   return (
     <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
       <View style={{ paddingHorizontal: 20 }}>
@@ -66,9 +65,10 @@ const SubCategory = ({ route, navigation }) => {
 
         {/* Items */}
         <View>
-          {items.map((item) => (
-            <ItemTab key={item.id} {...item} {...{ tabPress }} />
-          ))}
+          {items.map((item) => {
+            const tabPress = () => navigation.navigate("Item", { item });
+            return <ItemTab key={item.id} {...item} {...{ tabPress }} />;
+          })}
         </View>
         {/* Items */}
       </ScrollView>

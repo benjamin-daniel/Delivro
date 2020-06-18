@@ -21,4 +21,6 @@ export default {
   violet: "#6C0EE4",
   bgViolet: "#E2CBFF",
   green: "#0BCE83",
+  sGreen: "#06BE77",
+  inActiveWhite: "rgba(255, 255, 255, 0.5)",
 };

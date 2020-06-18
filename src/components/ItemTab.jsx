@@ -21,7 +21,7 @@ const Item = ({ id, name, amount, currency, unit, tabPress }) => {
       </View>
       <View style={styles.content}>
         <View>
-          <Text variant="itemHeader" style={{ marginBottom: 12 }}>
+          <Text variant="itemTabHeader" style={{ marginBottom: 12 }}>
             {name}
           </Text>
           <Text>
