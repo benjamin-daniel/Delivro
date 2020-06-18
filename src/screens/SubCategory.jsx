@@ -5,7 +5,7 @@ import Colors from "constants/Colors";
 import Header from "components/Header";
 import SearchBar from "components/SearchBar";
 import Chip from "components/Chip";
-import Item from "components/Item";
+import ItemTab from "components/ItemTab";
 
 const majorTags = [
   { name: "Cabbage and lettuce", count: 14 },
@@ -21,7 +21,7 @@ const minorTags = [
 const items = [
   { name: "Boston lettuce", amount: 1.5, currency: "$", unit: "piece", id: 0 },
   { name: "Peppers", amount: 1.7, currency: "$", unit: "kg", id: 2 },
-  { name: "Savoy Cabbages", amount: 1.6, currency: "$", unit: "kg", id: 1},
+  { name: "Savoy Cabbages", amount: 1.6, currency: "$", unit: "kg", id: 1 },
 ];
 
 const ChipList = ({ children }) => (
@@ -65,7 +65,7 @@ const SubCategory = ({ route, navigation }) => {
         {/* Items */}
         <View>
           {items.map((item) => (
-            <Item key={item.id} {...item} />
+            <ItemTab key={item.id} {...item} />
           ))}
         </View>
         {/* Items */}
