@@ -9,17 +9,21 @@ import {
 import OnBoarding from "screens/OnBoarding";
 import BottomTabNavigator from "./BottomTabNavigator";
 import Text from "components/Text";
+import Item from "screens/Item";
 
 const Stack = createStackNavigator();
 
 export const Nav = () => {
   const { onBoarded } = useOnBoardState();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen
         options={{
           title: "SplashScreen",
-          headerShown: false,
           // When logging out, a pop animation feels intuitive
           // You can remove this if you want the default 'push' animation
           animationTypeForReplace: "pop",
@@ -34,6 +38,7 @@ export const Nav = () => {
         name="Root"
         component={BottomTabNavigator}
       />
+      <Stack.Screen name="Item" component={Item} />
 
       {/* {!onBoarded ? (
       ) : (

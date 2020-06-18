@@ -39,6 +39,8 @@ const SubCategory = ({ route, navigation }) => {
   const headerName = route.params?.name ?? "Vegetables";
   const focus = (chip) => setSelected(chip);
   const goBack = () => navigation.goBack();
+  // const tabPress = () => console.log("Yeah");
+  const tabPress = () => navigation.navigate("Item");
   return (
     <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
       <View style={{ paddingHorizontal: 20 }}>
@@ -65,7 +67,7 @@ const SubCategory = ({ route, navigation }) => {
         {/* Items */}
         <View>
           {items.map((item) => (
-            <ItemTab key={item.id} {...item} />
+            <ItemTab key={item.id} {...item} {...{ tabPress }} />
           ))}
         </View>
         {/* Items */}

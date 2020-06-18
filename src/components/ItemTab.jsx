@@ -12,10 +12,10 @@ import Images from "constants/Images";
 const { BostonImage, CabbageImage, PurpleImage } = Images;
 const images = [BostonImage, CabbageImage, PurpleImage];
 
-const Item = ({ id, name, amount, currency, unit }) => {
+const Item = ({ id, name, amount, currency, unit, tabPress }) => {
   const imgSource = images[id];
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={tabPress} style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={imgSource} />
       </View>
