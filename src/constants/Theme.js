@@ -12,6 +12,9 @@ export default {
     header: {
       fontSize: 30,
     },
+    small: {
+      fontSize: 12,
+    },
   },
   buttonVariants: {
     primary: {

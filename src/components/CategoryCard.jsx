@@ -42,7 +42,7 @@ const CategoryCard = ({ name, count, id, index }) => {
       </View>
       <View style={styles.content}>
         <Text>{name}</Text>
-        <Text>({count})</Text>
+        <Text variant="small">({count})</Text>
       </View>
     </TouchableOpacity>
   );
