@@ -17,4 +17,5 @@ export default {
   primary50: "#9586A8",
   primaryText: "#2D0C57",
   primaryButton: "#0BCE83",
+  faintGrey: "#D9D0E3",
 };
