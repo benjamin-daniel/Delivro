@@ -20,4 +20,5 @@ export default {
   faintGrey: "#D9D0E3",
   violet: "#6C0EE4",
   bgViolet: "#E2CBFF",
+  green: "#0BCE83",
 };

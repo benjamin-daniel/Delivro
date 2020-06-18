@@ -23,6 +23,8 @@ const Button = ({
   bare,
   color,
   containerStyle,
+  secondary,
+  icon,
 }) => {
   const variantProps = Theme.buttonVariants[variant];
   const disabledProps = disabled ? variantProps.disabled || {} : {};
@@ -38,7 +40,9 @@ const Button = ({
   const allStyles = bare
     ? [styles.button, buttonStyle]
     : [styles.button, themedStyles, buttonStyle];
-  const content = (
+  const content = secondary ? (
+    <View style={allStyles}>{icon}</View>
+  ) : (
     <View style={allStyles}>
       {loading ? (
         <ActivityIndicator color={textColor} />

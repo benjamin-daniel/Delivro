@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import Text from "components/Text";
 import Colors from "constants/Colors";
 import Header from "components/Header";
 import SearchBar from "components/SearchBar";
 import Chip from "components/Chip";
+import Item from "components/Item";
 
 const majorTags = [
   { name: "Cabbage and lettuce", count: 14 },
@@ -16,6 +17,13 @@ const minorTags = [
   { name: "Peppers", count: 7 },
   { name: "Potatoes", count: 6 },
 ];
+
+const items = [
+  { name: "Boston lettuce", amount: 1.5, currency: "$", unit: "piece" },
+  { name: "Peppers", amount: 1.7, currency: "$", unit: "kg" },
+  { name: "Savoy Cabbages", amount: 1.6, currency: "$", unit: "kg" },
+];
+
 const ChipList = ({ children }) => (
   <ScrollView
     style={styles.chipList}
@@ -25,6 +33,7 @@ const ChipList = ({ children }) => (
     {children}
   </ScrollView>
 );
+
 const SubCategory = ({ route, navigation }) => {
   const [selected, setSelected] = useState("");
   const headerName = route.params?.name ?? "Vegetables";
@@ -34,22 +43,33 @@ const SubCategory = ({ route, navigation }) => {
     <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
       <View style={{ paddingHorizontal: 20 }}>
         <Header name={headerName} onPress={goBack} />
-        <SearchBar containerStyles={styles.search} />
       </View>
 
-      {/* Chip Lists */}
-      <View>
-        <ChipList>
-          {majorTags.map((tag) => (
-            <Chip key={tag.name} {...tag} {...{ focus, selected }} />
+      <ScrollView style={{ flex: 1 }}>
+        <SearchBar containerStyles={styles.search} />
+        {/* Chip Lists */}
+        <View>
+          <ChipList>
+            {majorTags.map((tag) => (
+              <Chip key={tag.name} {...tag} {...{ focus, selected }} />
+            ))}
+          </ChipList>
+          <ChipList>
+            {minorTags.map((tag) => (
+              <Chip key={tag.name} {...tag} {...{ focus, selected }} />
+            ))}
+          </ChipList>
+        </View>
+        {/* Chip Lists */}
+
+        {/* Items */}
+        <View>
+          {items.map((item) => (
+            <Item key={item.name} {...item} />
           ))}
-        </ChipList>
-        <ChipList>
-          {minorTags.map((tag) => (
-            <Chip key={tag.name} {...tag} {...{ focus, selected }} />
-          ))}
-        </ChipList>
-      </View>
+        </View>
+        {/* Items */}
+      </ScrollView>
     </View>
   );
 };
@@ -60,6 +80,7 @@ const styles = StyleSheet.create({
   search: {
     marginVertical: 10,
     marginBottom: 20,
+    marginHorizontal: 10,
   },
   chipList: { padding: 10 },
 });

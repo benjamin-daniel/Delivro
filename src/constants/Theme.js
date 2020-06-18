@@ -23,6 +23,14 @@ export default {
       color: Colors.violet,
       fontSize: 14,
     },
+    secondary: {
+      color: Colors.bgViolet,
+    },
+    itemHeader: {
+      fontSize: 18,
+      color: Colors.primary,
+      fontWeight: "bold",
+    },
   },
   buttonVariants: {
     primary: {
@@ -32,6 +40,19 @@ export default {
       paddingVertical: 16,
       justifyContent: "center",
       alignItems: "center",
+    },
+    secondary: {
+      // padding: 5,
+      paddingHorizontal: 0,
+      backgroundColor: Colors.white,
+      // height: 50,
+      width: 80,
+      // height: 40,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: Colors.faintGrey
     },
   },
 };
