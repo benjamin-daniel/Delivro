@@ -46,7 +46,7 @@ export default {
       paddingHorizontal: 0,
       backgroundColor: Colors.white,
       // height: 50,
-      width: 80,
+      width: 70,
       // height: 40,
       justifyContent: "center",
       alignItems: "center",
