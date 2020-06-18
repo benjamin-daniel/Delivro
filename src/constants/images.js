@@ -3,8 +3,8 @@ const Images = {
 };
 
 const toArray = () => {
-  let keys = Object.keys(images);
-  return keys.map((key) => images[key]);
+  let keys = Object.keys(Images);
+  return keys.map((key) => Images[key]);
 };
 export default {
   ...Images,

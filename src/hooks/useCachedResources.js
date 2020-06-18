@@ -2,6 +2,8 @@ import { Ionicons } from "@expo/vector-icons";
 import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import * as React from "react";
+import { Asset } from "expo-asset";
+
 import Images from "constants/Images";
 
 export default function useCachedResources() {
