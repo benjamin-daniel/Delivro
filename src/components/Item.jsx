@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, View, StyleSheet } from "react-native";
+import { TouchableOpacity, View, StyleSheet, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 import Text from "./Text";
@@ -7,11 +7,18 @@ import Colors from "constants/Colors";
 import Button from "./Button";
 
 import ShoppingCart from "assets/icons/shoppingcart.svg";
+import Images from "constants/Images";
 
-const Item = ({ name, amount, currency, unit }) => {
+const { BostonImage, CabbageImage, PurpleImage } = Images;
+const images = [BostonImage, CabbageImage, PurpleImage];
+
+const Item = ({ id, name, amount, currency, unit }) => {
+  const imgSource = images[id];
   return (
     <TouchableOpacity style={styles.container}>
-      <View style={styles.imageContainer}></View>
+      <View style={styles.imageContainer}>
+        <Image source={imgSource} />
+      </View>
       <View style={styles.content}>
         <View>
           <Text variant="itemHeader" style={{ marginBottom: 12 }}>
@@ -53,15 +60,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   imageContainer: {
-    flex: 2,
-    backgroundColor: Colors.violet,
+    flex: 1,
+    // backgroundColor: Colors.violet,
     marginHorizontal: 10,
     marginRight: 10,
     borderRadius: 8,
     overflow: "hidden",
   },
   content: {
-    flex: 3,
+    flex: 1,
     marginHorizontal: 10,
     marginLeft: 10,
     justifyContent: "space-between",

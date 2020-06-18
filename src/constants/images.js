@@ -5,6 +5,10 @@ const CoffeeImage = require("../assets/images/Media-1.jpg");
 const SweetsImage = require("../assets/images/Media-5.jpg");
 const RopeImage = require("../assets/images/Media.jpg");
 
+const BostonImage = require("../assets/images/Boston.png");
+const CabbageImage = require("../assets/images/Cabbage.png");
+const PurpleImage = require("../assets/images/PurpleFlower.png");
+
 const Images = {
   logo: require("../assets/images/logo.png"),
   VeggieImage,
@@ -13,6 +17,9 @@ const Images = {
   CoffeeImage,
   SweetsImage,
   RopeImage,
+  BostonImage,
+  CabbageImage,
+  PurpleImage,
 };
 
 const SvgIcons = {

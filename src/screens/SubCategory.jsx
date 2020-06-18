@@ -19,9 +19,9 @@ const minorTags = [
 ];
 
 const items = [
-  { name: "Boston lettuce", amount: 1.5, currency: "$", unit: "piece" },
-  { name: "Peppers", amount: 1.7, currency: "$", unit: "kg" },
-  { name: "Savoy Cabbages", amount: 1.6, currency: "$", unit: "kg" },
+  { name: "Boston lettuce", amount: 1.5, currency: "$", unit: "piece", id: 0 },
+  { name: "Peppers", amount: 1.7, currency: "$", unit: "kg", id: 2 },
+  { name: "Savoy Cabbages", amount: 1.6, currency: "$", unit: "kg", id: 1},
 ];
 
 const ChipList = ({ children }) => (
@@ -65,7 +65,7 @@ const SubCategory = ({ route, navigation }) => {
         {/* Items */}
         <View>
           {items.map((item) => (
-            <Item key={item.name} {...item} />
+            <Item key={item.id} {...item} />
           ))}
         </View>
         {/* Items */}
