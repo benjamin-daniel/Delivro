@@ -16,12 +16,15 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator
+      screenOptions={{ title: "" }}
+      initialRouteName={INITIAL_ROUTE_NAME}
+    >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          title: "Get Started",
+          // title: "Get Started",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-code-working" />
           ),
