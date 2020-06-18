@@ -56,7 +56,7 @@ const OnBoarding = ({ navigation }) => {
   const dispatch = useOnBoardDispatch();
   const SheetContent = () => <InnerContent {...{ navigation }} />;
   // TODO: remove
-  navigation.navigate("Root");
+  // navigation.navigate("Root");
 
   return (
     <View style={{ flex: 1, backgroundColor: Colors.tintColor }}>
