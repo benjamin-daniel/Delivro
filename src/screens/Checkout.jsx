@@ -6,13 +6,16 @@ import Header from "components/Header";
 import { Feather, AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { Switch } from "react-native-switch";
 
-const Checkout = () => {
+const Checkout = ({ navigation }) => {
   const [selected, setSelected] = useState(true);
   return (
     <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
       <Header name="Checkout" standard />
       <ScrollView style={{ paddingHorizontal: 20, paddingTop: 25 }}>
-        <OptionButton header="payment method" />
+        <OptionButton
+          header="payment method"
+          onPress={() => navigation.navigate("Card")}
+        />
         <View style={{ flexDirection: "row", marginTop: 20, marginBottom: 40 }}>
           <MaterialIcons
             name="credit-card"
@@ -103,7 +106,7 @@ const Checkout = () => {
   );
 };
 
-const OptionButton = ({ header }) => {
+const OptionButton = ({ header, onPress }) => {
   return (
     <View
       style={{
@@ -113,7 +116,7 @@ const OptionButton = ({ header }) => {
       }}
     >
       <Text variant="optionHeader">{header}</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPress}>
         <Text variant="optionChange">Change</Text>
       </TouchableOpacity>
     </View>

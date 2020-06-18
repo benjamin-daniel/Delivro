@@ -10,6 +10,7 @@ import OnBoarding from "screens/OnBoarding";
 import BottomTabNavigator from "./BottomTabNavigator";
 import Text from "components/Text";
 import Item from "screens/Item";
+import Card from "screens/Card";
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ export const Nav = () => {
         component={BottomTabNavigator}
       />
       <Stack.Screen name="Item" component={Item} />
+      <Stack.Screen name="Card" component={Card} />
 
       {/* {!onBoarded ? (
       ) : (

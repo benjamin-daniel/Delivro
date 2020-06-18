@@ -1,5 +1,12 @@
 import * as React from "react";
-import Svg, { Path } from "react-native-svg";
+import Svg, {
+  Path,
+  Rect,
+  Ellipse,
+  Defs,
+  LinearGradient,
+  Stop,
+} from "react-native-svg";
 
 const defaultProps = {
   strokeWidth: 1.5,
@@ -46,4 +53,33 @@ function Profile({ stroke = "#9586A8", ...props }) {
   );
 }
 
-export default { Home, Cart, Profile };
+function Card(props) {
+  return (
+    <Svg width={374} height={240} viewBox="0 0 374 240" fill="none" {...props}>
+      <Rect width={374} height={240} rx={8} fill="url(#paint0_linear)" />
+      <Ellipse
+        cx={291.5}
+        cy={123.5}
+        rx={167.5}
+        ry={165.5}
+        fill="#fff"
+        fillOpacity={0.12}
+      />
+      <Defs>
+        <LinearGradient
+          id="paint0_linear"
+          x1={0}
+          y1={120}
+          x2={374}
+          y2={120}
+          gradientUnits="userSpaceOnUse"
+        >
+          <Stop stopColor="#B993D6" />
+          <Stop offset={1} stopColor="#8CA6DB" />
+        </LinearGradient>
+      </Defs>
+    </Svg>
+  );
+}
+
+export default { Home, Cart, Profile, Card };
