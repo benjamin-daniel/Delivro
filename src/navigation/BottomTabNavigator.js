@@ -5,9 +5,14 @@ import TabBarIcon from "../components/TabBarIcon";
 import LinksScreen from "screens/LinksScreen";
 import HomeScreen from "screens/HomeScreen";
 import EmptyScreen from "screens/EmptyScreen";
+import Images from "constants/Images";
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = "Home";
+
+import CheveronLeft from "assets/icons/chevronleft.svg";
+import Icons from "components/Icons";
+import Colors from "constants/Colors";
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
@@ -17,26 +22,36 @@ export default function BottomTabNavigator({ navigation, route }) {
 
   return (
     <BottomTab.Navigator
-      screenOptions={{ title: "" }}
+      tabBarOptions={{
+        showLabel: false,
+        activeTintColor: Colors.tabIconSelected,
+      }}
       initialRouteName={INITIAL_ROUTE_NAME}
     >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          // title: "Get Started",
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} name="md-code-working" />
+          tabBarIcon: ({ focused, color: stroke }) => (
+            <Icons.Home {...{ stroke, focused }} />
           ),
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="Cart"
+        component={EmptyScreen}
         options={{
-          title: "Resources",
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} name="md-book" />
+          tabBarIcon: ({ focused, color: stroke }) => (
+            <Icons.Cart {...{ stroke, focused }} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={EmptyScreen}
+        options={{
+          tabBarIcon: ({ focused, color: stroke }) => (
+            <Icons.Profile {...{ stroke, focused }} />
           ),
         }}
       />

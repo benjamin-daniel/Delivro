@@ -47,17 +47,15 @@ const dummyData = [
 ];
 
 const HomeScreen = ({ navigation, ...props }) => {
-  const goBack = () => navigation.goBack();
-  const search = <SearchBar containerStyles={styles.search} />;
+  const goBack = () => navigation.navigate("Onboarding");
   return (
     <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
       <View style={{ paddingHorizontal: 20 }}>
         <Header name="Categories" onPress={goBack} />
       </View>
-
+      <SearchBar containerStyles={styles.search} />
       <FlatList
         style={{ flex: 1, paddingHorizontal: 10 }}
-        ListHeaderComponent={search}
         data={dummyData}
         numColumns={2}
         keyExtractor={(item, index) => item.name + ""}
@@ -75,5 +73,6 @@ const styles = StyleSheet.create({
   search: {
     marginVertical: 10,
     marginBottom: 20,
+    marginHorizontal: 10,
   },
 });

@@ -22,7 +22,6 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     height: 100,
-
     justifyContent: "space-evenly",
   },
 });
