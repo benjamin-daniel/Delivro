@@ -15,6 +15,14 @@ export default {
     small: {
       fontSize: 12,
     },
+    chip: {
+      fontSize: 14,
+      color: Colors.bgViolet,
+    },
+    chipSelected: {
+      color: Colors.violet,
+      fontSize: 14,
+    },
   },
   buttonVariants: {
     primary: {
