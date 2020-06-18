@@ -39,24 +39,34 @@ export default {
       color: Colors.primary,
       fontSize: 30,
       fontWeight: "bold",
-      lineHeight: 42
+      lineHeight: 42,
     },
     secondaryInfo: {
       fontSize: 24,
       color: Colors.primary50,
-      fontWeight: 'normal',
-      lineHeight: 42
-
+      fontWeight: "normal",
+      lineHeight: 42,
     },
     itemInfo: {
       marginVertical: 10,
       fontSize: 16,
-      color: Colors.sGreen
+      color: Colors.sGreen,
       // fontWeight: 'bold'
     },
     secondaryButton: {
       color: Colors.white,
       marginLeft: 15,
+    },
+    optionHeader: {
+      fontSize: 22,
+      fontWeight: "bold",
+      textTransform: "uppercase",
+    },
+    optionChange: {
+      color: Colors.selectedViolet,
+      fontWeight: "bold",
+      textTransform: "uppercase",
+      fontSize: 15,
     },
   },
   buttonVariants: {

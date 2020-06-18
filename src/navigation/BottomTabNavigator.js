@@ -14,6 +14,7 @@ import CheveronLeft from "assets/icons/chevronleft.svg";
 import Icons from "components/Icons";
 import Colors from "constants/Colors";
 import { createStackNavigator } from "@react-navigation/stack";
+import Checkout from "screens/Checkout";
 
 const Stack = createStackNavigator();
 
@@ -51,7 +52,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="Cart"
-        component={EmptyScreen}
+        component={Checkout}
         options={{
           tabBarIcon: ({ focused, color: stroke }) => (
             <Icons.Cart {...{ stroke, focused }} />

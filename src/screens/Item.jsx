@@ -16,9 +16,10 @@ import Layout from "constants/Layout";
 const imageWidth = Layout.window.width;
 const imageHeight = Layout.window.height * 0.3 + 20;
 
-const Item = ({ route }) => {
+const Item = ({ route, navigation }) => {
   const item = route.params?.item ?? {};
-  const { id, name, amount, currency, unit, tabPress } = item;
+  const { id, name, amount, currency, unit } = item;
+  const cartPress = () => navigation.navigate("Cart");
   return (
     <SafeAreaView style={{ flex: 1, paddingBottom: 0 }}>
       <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
@@ -102,6 +103,7 @@ const Item = ({ route }) => {
                   text="ADD TO CART"
                   textVariant="secondaryButton"
                   icon={<ShoppingCart />}
+                  onPress={cartPress}
                 />
               </View>
             </View>
