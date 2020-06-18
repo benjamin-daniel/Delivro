@@ -2,18 +2,14 @@ import React from "react";
 import { View } from "react-native";
 import Text from "components/Text";
 import Colors from "constants/Colors";
+import Header from "components/Header";
 
 const EmptyScreen = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: Colors.offWhite,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Empty Screen</Text>
+    <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
+      <View style={{ paddingHorizontal: 20 }}>
+        <Header name="Header" />
+      </View>
     </View>
   );
 };

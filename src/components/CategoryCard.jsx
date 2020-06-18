@@ -24,15 +24,19 @@ const CategoryImages = {
   5: CoffeeImage,
 };
 
-const CategoryCard = ({ name, count, id, index }) => {
+const CategoryCard = ({ name, count, id, index, navigate }) => {
   // determine if the card is on the right or left
   const left = index % 2 == 0;
   const addonStyle = left ? { marginRight: 10 } : { marginLeft: 10 };
+  const onPressHandler = () => navigate("SubCategory", { name });
 
   // hack to get real height as cover mode is buggy
   const width = (Layout.window.width - 40) / 2;
   return (
-    <TouchableOpacity style={[styles.header, addonStyle]}>
+    <TouchableOpacity
+      onPress={onPressHandler}
+      style={[styles.header, addonStyle]}
+    >
       <View style={{ flex: 3 }}>
         <Image
           resizeMode="cover"

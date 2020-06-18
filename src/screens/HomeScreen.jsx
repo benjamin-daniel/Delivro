@@ -46,8 +46,8 @@ const dummyData = [
   },
 ];
 
-const HomeScreen = ({ navigation, ...props }) => {
-  const goBack = () => navigation.navigate("Onboarding");
+const HomeScreen = ({ navigation: { navigate }, ...props }) => {
+  const goBack = () => navigate("Onboarding");
   return (
     <View style={{ flex: 1, backgroundColor: Colors.offWhite }}>
       <View style={{ paddingHorizontal: 20 }}>
@@ -60,7 +60,7 @@ const HomeScreen = ({ navigation, ...props }) => {
         numColumns={2}
         keyExtractor={(item, index) => item.name + ""}
         renderItem={({ item, index }) => (
-          <CategoryCard {...item} {...{ index }} />
+          <CategoryCard {...item} {...{ index, navigate }} />
         )}
       />
     </View>

@@ -2,9 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
 
 import TabBarIcon from "../components/TabBarIcon";
-import LinksScreen from "screens/LinksScreen";
 import HomeScreen from "screens/HomeScreen";
 import EmptyScreen from "screens/EmptyScreen";
+import SubCategory from "screens/SubCategory";
 import Images from "constants/Images";
 
 const BottomTab = createBottomTabNavigator();
@@ -13,6 +13,18 @@ const INITIAL_ROUTE_NAME = "Home";
 import CheveronLeft from "assets/icons/chevronleft.svg";
 import Icons from "components/Icons";
 import Colors from "constants/Colors";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
+
+const HomeStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: null }}>
+      <Stack.Screen name="HomeRoot" component={HomeScreen} />
+      <Stack.Screen name="SubCategory" component={SubCategory} />
+    </Stack.Navigator>
+  );
+};
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
@@ -30,7 +42,7 @@ export default function BottomTabNavigator({ navigation, route }) {
     >
       <BottomTab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeStack}
         options={{
           tabBarIcon: ({ focused, color: stroke }) => (
             <Icons.Home {...{ stroke, focused }} />
