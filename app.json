@@ -17,7 +17,9 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.delivro.delivro",
+      "buildNumber": "1.0.0"
     },
     "web": {
       "favicon": "./src/assets/images/favicon.png"
